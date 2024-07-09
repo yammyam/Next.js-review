@@ -4,7 +4,6 @@ import { Store } from "@/types/store";
 import { NextPage } from "next";
 import useStores from "@/hooks/useStores";
 import HomeHeader from "@/components/home/Header";
-import styles from "../styles/header.module.scss";
 import DetailSection from "@/components/home/DetailSection";
 
 interface Props {
@@ -21,7 +20,14 @@ const Home: NextPage<Props> = ({ stores }) => {
   return (
     <>
       <HomeHeader />
-      <main style={{ width: "100%", height: "100%" }}>
+      <main
+        style={{
+          position: "relative",
+          width: "100%",
+          height: "100%",
+          overflow: "hidden",
+        }}
+      >
         <MapSection />
         <DetailSection />
       </main>

@@ -17,6 +17,11 @@ const nextConfig = {
         hostname: "lecture-1.vercel.app",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "search.pstatic.net",
+        pathname: "/**",
+      },
     ],
   },
 };

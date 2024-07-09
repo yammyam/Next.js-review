@@ -1,8 +1,9 @@
-import React, { useEffect, useRef } from "react";
-import Script from "next/script";
-import { Coordinates } from "../../types/store";
-import { NaverMap } from "../../types/map";
-import { INITIAL_CENTER, INITIAL_ZOOM } from "../../hooks/useMap";
+import React, { useEffect, useRef } from 'react';
+import Script from 'next/script';
+import { Coordinates } from '../../types/store';
+import { NaverMap } from '../../types/map';
+import { INITIAL_CENTER, INITIAL_ZOOM } from '../../hooks/useMap';
+import styles from '../../styles/map.module.scss';
 
 type Props = {
   mapId?: string;
@@ -12,7 +13,7 @@ type Props = {
 };
 
 const Map = ({
-  mapId = "map",
+  mapId = 'map',
   initialCenter = INITIAL_CENTER,
   initialZoom = INITIAL_ZOOM,
   onLoad,
@@ -54,7 +55,7 @@ const Map = ({
         src={`https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=${process.env.NEXT_PUBLIC_NCP_CLIENT_ID}`}
         onReady={initializeMap}
       />
-      <div id={mapId} style={{ width: "100%", height: "100%" }} />
+      <div id={mapId} className={styles.map} />
     </>
   );
 };

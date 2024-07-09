@@ -1,10 +1,10 @@
-import { useState } from "react";
-import useSWR from "swr";
-import { CURRENT_STORE_KEY } from "@/hooks/useCurrentStore";
-import type { Store } from "@/types/store";
-import styles from "../../styles/detail.module.scss";
-import DetailHeader from "./DetailHeader";
-import DetailContent from "./DetailContent";
+import { useState } from 'react';
+import useSWR from 'swr';
+import { CURRENT_STORE_KEY } from '../../hooks/useCurrentStore';
+import type { Store } from '../../types/store';
+import styles from '../../styles/detail.module.scss';
+import DetailHeader from './DetailHeader';
+import DetailContent from './DetailContent';
 
 const DetailSection = () => {
   const { data: currentStore } = useSWR<Store>(CURRENT_STORE_KEY);
@@ -12,8 +12,8 @@ const DetailSection = () => {
 
   return (
     <div
-      className={`${styles.DetailSection} ${expanded ? styles.expanded : ""} ${
-        currentStore ? styles.selected : ""
+      className={`${styles.detailSection} ${expanded ? styles.expanded : ''} ${
+        currentStore ? styles.selected : ''
       }`}
     >
       <DetailHeader
@@ -25,5 +25,4 @@ const DetailSection = () => {
     </div>
   );
 };
-
 export default DetailSection;
