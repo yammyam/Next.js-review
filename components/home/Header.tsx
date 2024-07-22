@@ -9,7 +9,7 @@ import { AiOutlineShareAlt } from "react-icons/ai";
 import { VscFeedback } from "react-icons/vsc";
 
 //홈화면 헤더
-
+//완성한 헤더
 const HomeHeader = () => {
   const { resetMapOptions, getMapOptions } = useMap();
 
